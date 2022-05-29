@@ -11,7 +11,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 
-The built production version of the app can be found on this [url](http://localhost:3000)
+The built production version of the app can be found on this [url](http://143.244.145.77:3000/)\
+This is hosted on Digital ocean's Ubuntu Droplet.
 
 # Tools Used in the App
 
