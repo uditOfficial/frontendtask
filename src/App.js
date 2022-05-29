@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable react-hooks/exhaustive-deps */
+import NavigationBar from "./components/NavigationBar/NavigationBar";
+import "./App.css";
+import { useEffect } from "react";
+import Footer from "./components/Footer/Footer";
+import CoinTable from "./components/CoinTable/CoinTable";
+import { useData } from "./Contexts/DataProvider";
+import MarketData from "./components/MarketData/MarketData";
 
 function App() {
+  const { limit, fetchAssets } = useData();
+  useEffect(() => {
+    fetchAssets();
+  }, [limit]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ backgroundColor: "#ECEFF1" }}>
+      <NavigationBar />
+
+      <MarketData />
+
+      <CoinTable />
+
+      <Footer />
     </div>
   );
 }
